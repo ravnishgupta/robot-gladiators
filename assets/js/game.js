@@ -10,7 +10,7 @@ var enemyName = "";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var enemyBots = ["oi", "yo", "itthe"];
+var enemyBots = ["oi", "yo", "itthe", "yahan", "idhar"];
 
 var fight = function(enemyName) {
   var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -27,8 +27,10 @@ var fight = function(enemyName) {
 
         //We then check to see if that last attack destroyed our robot and 
         //got its health down to zero or below by using a conditional statement.
+        //debugger;
         if (enemyHealth <= 0) {
             alert( enemyName + " has lost and is dead");
+            break;
         }
         else alert(enemyName + " can still fight");
 
@@ -39,6 +41,7 @@ var fight = function(enemyName) {
         playerHealth = playerHealth - enemyAttack
         if (playerHealth <= 0) {
             alert(playerName + " has lost and is dead");
+            //break;
         }
         else alert(playerName + " can still fight");
     }
@@ -53,8 +56,10 @@ var fight = function(enemyName) {
 }
 
 for (var i=0; i<enemyBots.length; i++) {
-  //console.log(enemyBots[i]);
-  fight(enemyBots[i]);
+  if (enemyHealth>0) {
+    //debugger;
+    fight(enemyBots[i]);
+  }
 }
 
 // Game States
